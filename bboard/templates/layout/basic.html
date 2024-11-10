@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} main page {% endblock %} :: Bulletin Board</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bboard/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Announcements</h1>
+</header>
+
+<nav>
+    <a href="{% url 'index' %}">main page</a>
+    {% for cat in categories %}
+    <a href="{% url 'cats' cat.pk %}">{{ cat.name }}</a>
+    {% endfor %}
+    <a href="{% url 'add' %}">add</a>
+</nav>
+
+<main>
+{% block content %}
+{% endblock %}
+</main>
+
+</body>
+</html>

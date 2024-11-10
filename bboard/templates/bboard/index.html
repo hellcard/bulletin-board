@@ -1,0 +1,17 @@
+{% extends "layout/basic.html" %}
+
+
+{% block content %}
+<h2>Main page</h2>
+{% for bb in bbs %}
+<div>
+    <h3>Title: {{ bb.title }}</h3>
+    <h4>Price: {{ bb.price }}</h4>
+    <p>Content: {{ bb.content }}</p>
+    <p>By user: {{ bb.user }}</p>
+    <p>Date: {{ bb.date }}</p>
+    <br>
+</div>
+
+{% endfor %}
+{% endblock %}
